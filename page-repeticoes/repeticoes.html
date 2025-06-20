@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codigos de Repetição</title>
+    <link rel="stylesheet" href="repeticoes.css">
+    <link rel="stylesheet" href="../word.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<body>
+
+    <div class="title-container">
+
+        <h1>Exercicios JavaScript</h1>
+        <p>Selecione um programa para ver como funciona:</p>
+
+    </div>
+
+    <nav>
+
+        <a class="bnt-nav" href="../page-condicionais/condicionais.html">Condicionais</a>
+        <a class="bnt-nav" href="./repeticoes.html">Repetições</a>
+        <a class="bnt-nav" href="../page-filtros/filtros.html">Filtros</a>
+
+    </nav>
+
+</body>
+
+<script>
+
+    const currentFile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1); // Obtém o nome do arquivo atual da URL
+
+    // Seleciona todos os links com a classe 'bnt-nav'
+    document.querySelectorAll('.bnt-nav').forEach(link => {
+
+        const linkHref = link.getAttribute('href'); // Obtém o href do link
+        const linkFile = linkHref.substring(linkHref.lastIndexOf('/') + 1); // Extrai o nome do arquivo do href
+
+        // Verifica se o arquivo atual é o mesmo do link
+        if (currentFile === linkFile) {
+
+            link.classList.add('active'); // Se for, adiciona a classe 'active' ao link
+
+        } else {
+
+            link.classList.remove('active'); // Remove a classe 'active' se não for o arquivo atual
+
+        }
+
+    });
+
+</script>
+
+</html>

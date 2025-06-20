@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codigos de Condição</title>
+  <link rel="stylesheet" href="condicionais.css">
+  <link rel="stylesheet" href="../word.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<body>
+
+  <div class="title-container">
+
+    <h1>Exercicios JavaScript</h1>
+    <p>Selecione um programa para ver como funciona:</p>
+
+  </div>
+
+  <nav>
+
+    <a class="bnt-nav active" href="./condicionais.html">Condicionais</a>
+    <a class="bnt-nav" href="../page-repeticoes/repeticoes.html">Repetições</a>
+    <a class="bnt-nav" href="../page-filtros/filtros.html">Filtros</a>
+
+  </nav>
+
+  <h2>Nivel Basico</h2>
+
+  <h3>Exercicio 01 - Você é de maior?</h3>
+  <p>Este programa descobre se você é Maior ou Menor de idade perguntando a sua idade.</p>
+  <button onclick="exercicioCondicionais01()">Verificar</button>
+
+  <h3>Exercicio 02 - Negativo ou Positivo?</h3>
+  <p>Este programa verifica se um número é Negativo ou Positivo. Ex: -1(negativo), 1(positivo)</p>
+  <button onclick="exercicioCondicionais02()">Verificar</button>
+
+  <h3>Exercicio 03 - Passou de ano?</h3>
+  <p>Este programa vê qual foi a nota do aluno e decide se esse aluno passou.</p>
+  <button onclick="exercicioCondicionais03()">Verificar</button>
+
+  <!-- Link para o arquivo JavaScript -->
+  <script src="condicionais.js"></script>
+
+</body>
+
+<script>
+
+  const currentFile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+  document.querySelectorAll('.bnt-nav').forEach(link => {
+
+    const linkHref = link.getAttribute('href');
+
+    const linkFile = linkHref.substring(linkHref.lastIndexOf('/') + 1);
+
+    if (currentFile === linkFile) {
+
+      link.classList.add('active');
+
+    } else {
+
+      link.classList.remove('active');
+
+    }
+
+  });
+
+</script>
+
+</html>

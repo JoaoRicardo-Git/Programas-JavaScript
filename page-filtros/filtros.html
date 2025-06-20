@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codigos de filtros</title>
+    <link rel="stylesheet" href="filtros.css">
+    <link rel="stylesheet" href="../word.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<body>
+
+    <div class="title-container">
+
+        <h1>Exercicios JavaScript</h1>
+        <p>Selecione um programa para ver como funciona:</p>
+
+    </div>
+
+    <nav>
+
+        <a class="bnt-nav" href="../page-condicionais/condicionais.html">Condicionais</a>
+        <a class="bnt-nav" href="../page-repeticoes/repeticoes.html">Repetições</a>
+        <a class="bnt-nav" href="./filtros.html">Filtros</a>
+
+    </nav>
+
+</body>
+
+<script>
+
+    const currentFile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+    document.querySelectorAll('.bnt-nav').forEach(link => {
+
+        const linkHref = link.getAttribute('href');
+
+        const linkFile = linkHref.substring(linkHref.lastIndexOf('/') + 1);
+
+        if (currentFile === linkFile) {
+
+            link.classList.add('active');
+
+        } else {
+
+            link.classList.remove('active');
+
+        }
+
+    });
+
+
+
+</script>
+
+</html>

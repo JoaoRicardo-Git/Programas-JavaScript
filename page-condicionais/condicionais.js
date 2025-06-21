@@ -37,7 +37,7 @@ function exercicioCondicionais01() {
             });
 
         } else if (idade >= 18) {
-            
+
             Swal.fire({
                 title: 'Maior de idade!',
                 text: 'Você é maior de idade.',
@@ -187,8 +187,129 @@ function exercicioCondicionais03() {
                 title: 'Reprovado!',
                 text: 'Infelizmente, você não passou.',
                 icon: 'error'
-                
+
             });
         }
     });
+}
+
+function exercicioCondicionais04() {
+
+    Swal.fire({
+
+        title: 'Qual sua idade?',
+        input: 'number',
+        inputAttributes: {
+            min: 0,
+            max: 100,
+            step: 1
+        },
+        inputPlaceholder: 'Digite sua idade...',
+        showCancelButton: true,
+        confirmButtonText: 'Verificar',
+        cancelButtonText: 'Cancelar'
+
+    }).then((result) => {
+
+        if (result.isDismissed) {
+            return;
+        }
+
+        let idade = result.value;
+
+        if (idade === '' || isNaN(idade)) {
+
+            Swal.fire({
+
+                title: 'Idade inválido!',
+                text: 'Por favor, digite uma Idade válida.',
+                icon: 'warning'
+
+            }).then(() => {
+                exercicioCondicionais04(); // Repetir a função
+            });
+
+        } else if (idade <= 12) {
+
+            Swal.fire({
+
+                title: 'Você é uma Criança!',
+                text: 'Você ainda é uma Criança.',
+                icon: 'info'
+
+            })
+
+        } else if (idade >= 13 && idade < 18) {
+
+            Swal.fire({
+
+                title: 'Você é um Adolescente!',
+                text: `Idade colocada: ${idade}`,
+                icon: 'info'
+
+            })
+
+        } else {
+
+            Swal.fire({
+
+                title: 'Você é um Adulto!',
+                text: `Idade colocada: ${idade}`,
+                icon: 'info'
+
+            })
+
+        }
+
+    })
+
+}
+
+function exercicioCondicionais05() {
+
+    Swal.fire({
+
+        title: 'Coloque um numero Par ou ímpar:',
+        input: 'number',
+        inputAttributes: {
+            min: 0,
+            step: 1
+        },
+        inputPlaceholder: 'Digite um numero...',
+        showCancelButton: true,
+        confirmButtonText: 'Verificar',
+        cancelButtonText: 'Cancelar'
+
+    }).then((result) => {
+
+        if (result.isDismissed) {
+            return;
+        }
+
+        let num = result.value;
+        
+        if (num % 2 == 0) {
+
+            Swal.fire({
+
+                title: 'Esse número é par!',
+                text: `o numero ${num} é Par!`,
+                icon: 'info'
+                
+            })
+
+        } else {
+
+            Swal.fire({
+
+                title: 'Esse número é ímpar!',
+                text: `o numero ${num} é ímpar! 😔`,
+                icon: 'info'
+
+            })
+
+        }
+
+    })
+
 }

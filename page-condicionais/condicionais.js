@@ -1,4 +1,5 @@
-function exercicioCondicionais01() {
+//Nível Básico
+function exercicioCondicionaisBasic01() {
 
     Swal.fire({
 
@@ -57,7 +58,7 @@ function exercicioCondicionais01() {
 
 }
 
-function exercicioCondicionais02() {
+function exercicioCondicionaisBasic02() {
 
     Swal.fire({
 
@@ -116,7 +117,7 @@ function exercicioCondicionais02() {
     });
 }
 
-function exercicioCondicionais03() {
+function exercicioCondicionaisBasic03() {
 
     Swal.fire({
 
@@ -193,7 +194,7 @@ function exercicioCondicionais03() {
     });
 }
 
-function exercicioCondicionais04() {
+function exercicioCondicionaisBasic04() {
 
     Swal.fire({
 
@@ -265,7 +266,7 @@ function exercicioCondicionais04() {
 
 }
 
-function exercicioCondicionais05() {
+function exercicioCondicionaisBasic05() {
 
     Swal.fire({
 
@@ -287,7 +288,7 @@ function exercicioCondicionais05() {
         }
 
         let num = result.value;
-        
+
         if (num % 2 == 0) {
 
             Swal.fire({
@@ -295,7 +296,7 @@ function exercicioCondicionais05() {
                 title: 'Esse número é par!',
                 text: `o numero ${num} é Par!`,
                 icon: 'info'
-                
+
             })
 
         } else {
@@ -311,5 +312,94 @@ function exercicioCondicionais05() {
         }
 
     })
+
+}
+
+//Nível Intermediário
+function exercicioCondicionaisIntermediario01() {
+
+    let num1 = Number(prompt("Escolha o primeiro numero:"))
+    let operacao = prompt("Qual operacao?")
+    let num2 = Number(prompt("Escolha mais um numero:"))
+
+    if (operacao === "+") {
+
+        alert(num1 + num2)
+
+    } else if (operacao === "-") {
+
+        alert(num1 - num2)
+
+    } else if (operacao === "/") {
+
+        alert(num1 / num2)
+
+    } else if (operacao === "*") {
+
+        alert(num1 * num2)
+
+    } else if (operacao === "") {
+
+        alert("Coloque numeros validos")
+
+    }
+}
+
+function exercicioCondicionaisIntermediario02() {
+
+    let num1 = Number(prompt("Digite o Primeiro numero:"))
+    let num2 = Number(prompt("Digite o Segundo numero:"))
+    let num3 = Number(prompt("Digite o Terceiro numero:"))
+    let maior;
+
+    if (num1 >= num2 && num1 >= num3) {
+
+        maior = num1;
+
+    } else if (num2 >= num1 && num2 >= num3) {
+
+        maior = num2;
+
+    } else {
+
+        maior = num3;
+
+    }
+
+    alert("O numero maior é " + maior)
+
+}
+
+function exercicioCondicionaisIntermediario03() {
+
+    let valor = Number(prompt("Qual o valor da compra?"))
+    let desconto = 10;
+
+    if (valor >= 100) {
+
+        alert(valor - desconto)
+
+    } else {
+
+        alert(valor)
+
+    }
+
+}
+
+function exercicioCondicionaisIntermediario04() {
+
+ let nome = prompt("Nome de usuario:")
+ let password = prompt("Sua senha:")
+
+ if (nome == "Jricardo" || password == "1127") {
+
+    alert("Login aceito!")
+
+ } else {
+
+    alert("Login negado!")
+
+ }
 
 }
